@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .no{
+        position: absolute;
+        top: 900000px;
+    }
+  
+       
+    
+
+    body {
+        background-color: rgb(255, 255, 255);
+
+     
+      
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0.60323px 0.60323px -1.25px rgba(202, 202, 202, 0.18), 0px 2.29021px 2.29021px -2.5px rgba(63, 63, 63, 0.16), 0px 10px 10px -3.75px rgba(91, 90, 90, 0.063), 0px 2px 4px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.25);
+      
+        padding: 25px 50px;
+       
+   
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        position: absolute;
+        right: 0;
+    }
+    li {
+        color: black;
+        display: inline-block;
+        margin: 0 20px 0 0;
+        text-decoration: none;
+    }
+    .one {
+        position: absolute;
+        left: 45%;
+        
+        top: 25px ;
+        font-size: 17px;
+        font-style: unset;           
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: thin;
+        
+    }
+    nav ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        position: relative;
+    }
+    nav ul li a::after {
+        content: '';
+        width: 0;
+        height: 3px;
+        position: absolute; 
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgb(0, 0, 0);
+        transition: width 0.3s;
+    }
+    nav ul li a:hover::after{
+        width: 50%;
+    }
+    nav {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 5px 0;
+        padding-top: 20px;
+
+    }
+    nav ul li a {
+        display: inline-block;
+        list-style: none;
+        
+    }
+    .logo {
+        position: absolute;
+        top: 6px;
+        
+    }
+    .payment {
+        position: absolute;
+        top: 500px;
+        left: 870px;
+    }
+    .box1{
+        position: absolute;
+            height: 650px;
+            width: 1200px;
+  
+            top: 130px;
+            background: #FFFFFF;
+            right: 700px;
+            left: 50px;
+            box-shadow: 0px 0.60323px 0.60323px -1.25px rgba(0, 0, 0, 0.18), 0px 2.29021px 2.29021px -2.5px rgba(0, 0, 0, 0.16), 0px 10px 10px -3.75px rgba(0, 0, 0, 0.063), 0px 2px 4px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            outline: black;
+    }
+    .videoeditingtxt{
+        position: absolute;
+        top: 170px;
+        font-family:  Arial,Helvetica,sans-serif;
+        left: 860px;
+        font-weight: thin;
+        font-size: 19px;
+        color: rgb(3, 0, 48);
+    }
+    .checkoutimg{
+        position: absolute;
+        top: 130px;
+        left: 50px;
+
+    }
+    .videotext2{
+        position: absolute;
+        top: 300px;
+        left: 800px;
+        color: rgb(3, 0, 48);
+        font-size: 15px;
+    }
+    .box2{
+        position: absolute;
+            height: 200px;
+            width: 400px;
+  
+            top: 280px;
+            background: #FFFFFF;
+            
+            left: 780px;
+            box-shadow: 0px 0.60323px 0.60323px -1.25px rgba(0, 0, 0, 0.18), 0px 2.29021px 2.29021px -2.5px rgba(0, 0, 0, 0.16), 0px 10px 10px -3.75px rgba(0, 0, 0, 0.063), 0px 2px 4px rgba(0, 0, 0, 0.25), 0px 4px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+
+    }
+   
+    .p{
+        position: absolute;
+        top: 1000px;
+        
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="one">
+                <li><a href="Wev.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+               
+                
+            </ul>
+        </nav> 
+
+        <li class="logo"> <a href="Wev.html"><img src="wevlogo.png" width="70px" height="70px" ></a></li> 
+
+    </header>
+    <div class="payment">
+        <div id="smart-button-container">
+            <div style="text-align: center;">
+              <div id="paypal-button-container"></div>
+            </div>
+          </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+        <script>
+          function initPayPalButton() {
+            paypal.Buttons({
+              style: {
+                shape: 'rect',
+                color: 'white',
+                layout: 'vertical',
+                label: 'buynow',
+                
+              },
+      
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{"description":"video editing","amount":{"currency_code":"USD","value":29}}]
+                });
+              },
+      
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(orderData) {
+                  
+                  // Full available details
+                  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+      
+                  // Show a success message within this page, e.g.
+                  const element = document.getElementById('paypal-button-container');
+                  element.innerHTML = '';
+                  element.innerHTML = '<h3>Thank you for your payment!</h3>';
+      
+                  // Or go to another URL:  actions.redirect('thank_you.html');
+                  
+                });
+              },
+      
+              onError: function(err) {
+                console.log(err);
+              }
+            }).render('#paypal-button-container');
+          }
+          initPayPalButton();
+        </script>
+    </div>
+    <div class="box1">
+</div>
+
+<div class="box2">
+</div>
+
+<div class="videoeditingtxt">
+    <h1>Video Editing</h1>
+
+</div>
+<div class="videotext2">
+    <h3> *video editing service <br><br> *30 minute <br><br> *High Quality </h3>
+
+</div>
+<div class="checkoutimg">
+    <img src="checkoutimg.png" width="670px" height="650px">
+
+</div>
+
+
+
+
+
+`
+
+<div class="p">
+    <h6>.</h6>
+
+</div>
+    
+</body>
+</html>
